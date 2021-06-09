@@ -13,7 +13,7 @@ var contents = [
     },
     {
     id : 2,
-    name : '황정아1'
+    name : '황정아2'
     }
 ]
 
