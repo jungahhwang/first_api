@@ -14,7 +14,11 @@ var contents = [
     {
     id : 2,
     name : '황정아2'
-    }
+    },
+    {
+        id : 3,
+        name : 'john'
+        }
 ]
 
 // respond with "hello world" when a GET request is made to the homepage
