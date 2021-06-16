@@ -18,8 +18,13 @@ var contents = [
     {
         id : 3,
         name : 'john'
-        }
+    },
+    {
+        id : 4,
+        name : 'smith'
+    }
 ]
+
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/',  function(req, res)  {
