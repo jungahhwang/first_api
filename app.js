@@ -1,6 +1,11 @@
 var express = require('express');
+
+const cors = require('cors');
+
 const { allowedNodeEnvironmentFlags } = require('process');
-var app = express()
+var app = express();n
+
+app.use(cors());
 
 var contents = [
     {
@@ -26,6 +31,10 @@ var contents = [
     {
         id : 5,
         name : 'selly'
+    },
+    {
+        id : 6,
+        name : '안서후3'
     }
 ]
 
