@@ -4,13 +4,13 @@ const cors = require('cors');
 const mysql = require('mysql')
 
 
-const { allowedNodeEnvironmentFlags } = require('process');
+// const { allowedNodeEnvironmentFlags } = require('process');
 var app = express();
 
 app.use(cors());
 
 const connection = mysql.createConnection({
-    host: '13.124.244.79',
+    host: '13.125.244.79',
     user: 'snowgirl0113',
     password: 'Junga113!',
     database: 'todo'
@@ -22,11 +22,12 @@ connection.query('SELECT * FROM TODO_LIST', function (error, results, fields) {
     if (error) {
         console.log(error);
     }
+
     console.log('result1',results);
 });
     
 connection.end();
-/*
+
 var contents = [
     {
     id : 0,
@@ -74,7 +75,7 @@ var contents = [
         name : 'nexacro',
         done : true
     }
-]*/
+]
 
 
 // respond with "hello world" when a GET request is made to the homepage
