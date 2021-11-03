@@ -18,16 +18,6 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * FROM TODO_LIST', function (error, results, fields) {
-    if (error) {
-        console.log(error);
-    }
-
-    console.log('result1',results);
-});
-    
-connection.end();
-
 var contents = [
     {
     id : 0,
@@ -81,7 +71,13 @@ var contents = [
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/',  function(req, res)  {
   //res.send('hello world')
-  res.json(contents);
+  //res.json(contents);
+  connection.query('SELECT * FROM TODO_LIST', (error, results) => {
+    if (error) throw error;
+    console.log('User info is:',results);
+    res.send(results);
+   // console.log('result1',results);
+    });
 })
 
 app.get('/add',  function(req, res)  {
