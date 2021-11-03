@@ -80,6 +80,8 @@ app.get('/',  function(req, res)  {
     });
 })
 
+
+
 app.get('/add',  function(req, res)  {
     //res.send('hello world')
     contents.push({id:contents.length+1, name:req.query.name, done:false});
