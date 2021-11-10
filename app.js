@@ -81,12 +81,24 @@ app.get('/',  function(req, res)  {
 })
 
 
-
+//10.34.25.42/add?name=rksk
 app.get('/add',  function(req, res)  {
     //res.send('hello world')
-    contents.push({id:contents.length+1, name:req.query.name, done:false});
-    res.json(contents);
- })
+    //contents.push({id:contents.length+1, name:req.query.name, done:false});
+    //res.json(contents);
+
+   /* connection.query('INSERT INTO TODO_LIST ( [id:results.length+1, (error, results) => {
+        if (error) throw error;
+        console.log('User info is:',results);
+        res.send(results);*/
+    var sql = 'INSERT INTO TODO_LIST VALUES(?, ?, ?)';
+    var params = [3,req.query.name,'N']
+    connection.query(sql, params, function(err, results, field){
+        if(err){
+            console.log(err);
+        }
+    })
+ });
 
 
 app.listen(5000, () => console.log('listening on port 5000'));
