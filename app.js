@@ -93,7 +93,7 @@ app.get('/add',  function(req, res)  {
         res.send(results);*/
     
     var sql = 'INSERT INTO TODO_LIST VALUES(?, ?, ?)';
-    var params = [results.length+1,req.query.name,false]
+    var params = [req.query.name,false]
     connection.query(sql, params, function(err, results, field){
         if(err){
             console.log(err);
