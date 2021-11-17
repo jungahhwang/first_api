@@ -98,11 +98,6 @@ app.get('/add',  function(req, res)  {
         if(err){
             console.log(err);
         }
-    })
-
-    connection.query('SELECT * FROM TODO_LIST', (error, results) => {
-        if (error) throw error;
-        console.log('User info is:',results);
         res.send(results);
     });
  });
