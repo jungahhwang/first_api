@@ -92,8 +92,8 @@ app.get('/add',  function(req, res)  {
         console.log('User info is:',results);
         res.send(results);*/
     
-    var sql = 'INSERT INTO TODO_LIST VALUES(?, ?, ?)';
-    var params = [ ,req.query.name,false]
+    var sql = 'INSERT INTO TODO_LIST VALUES( ?, ?)';
+    var params = [req.query.name,'N']
     connection.query(sql, params, function(err, results, field){
         if(err){
             console.log(err);
